@@ -10,9 +10,3 @@ async function main() {
     port: envs.PORT,
   }).start();
 }
-
-
-
-//expresss 
-
-// Redux, Zustang, fect, GET, useEffect,
