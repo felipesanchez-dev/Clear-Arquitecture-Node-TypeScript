@@ -34,35 +34,53 @@ Una aplicación web construida con Node.js, TypeScript y Express siguiendo una a
 - Node.js (versión 18 o superior)
 - npm o yarn
 
- **Configurar variables de entorno**
-   ```bash
-   # Crear archivo .env en la raíz del proyecto
-   PORT=3000
-   ```
+    **scripts**
+  ```bash
+  # Confuiguracion package.json
+   "scripts": {
+   "dev": "tsnd --respawn --clear src/app.ts",
+   "build": "rimraf /dist && tsc",
+   "start": "npm run build && node dist/app.js"
+  },
+  ```
+
+  **Configurar variables de entorno**
+
+  ```bash
+  # Crear archivo .env en la raíz del proyecto
+  PORT=3000
+  ```
 
 ## 🚀 Scripts Disponibles
 
 ### Instalar Dependencias
+
 ```bash
 npm install
 ```
 
 ### Desarrollo
+
 ```bash
 npm run dev
 ```
+
 Inicia el servidor en modo desarrollo con hot reload. Los cambios se reflejan automáticamente.
 
 ### Construcción
+
 ```bash
 npm run build
 ```
+
 Compila el código TypeScript a JavaScript en la carpeta `dist/`.
 
 ### Producción
+
 ```bash
 npm start
 ```
+
 Construye la aplicación y ejecuta la versión de producción.
 
 ## 🧪 Desarrollo
@@ -72,16 +90,19 @@ Construye la aplicación y ejecuta la versión de producción.
 Si quieres replicar la configuración desde cero:
 
 1. **Inicializar proyecto**
+
    ```bash
    npm init -y
    ```
 
 2. **Instalar dependencias de desarrollo**
+
    ```bash
    npm i -D typescript @types/node ts-node-dev rimraf
    ```
 
 3. **Instalar dependencias de producción**
+
    ```bash
    npm i express @types/express dotenv env-var
    ```
@@ -99,6 +120,6 @@ Por el momento, la aplicación expone:
 
 ## 🌍 Variables de Entorno
 
-| Variable | Descripción | Valor por Defecto |
-|----------|-------------|-------------------|
-| `PORT` | Puerto del servidor | `3000` |
+| Variable | Descripción         | Valor por Defecto |
+| -------- | ------------------- | ----------------- |
+| `PORT`   | Puerto del servidor | `3000`            |
